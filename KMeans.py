@@ -1,5 +1,12 @@
 import math
 
+
+def summation(container, value):
+    total = 0
+    for x in range(len(container)):
+        total += container[x][value]
+    return total
+
 def euclidean_distance(first,second):
     # first and second =[1,2] typed list
     return math.sqrt((pow((first[0]-second[0]),2))+(pow((first[1]-second[1]),2)))
@@ -14,8 +21,11 @@ def knn(parentSet,median1,median2):
             set1.append(x)
         else:
             set2.append(x)
-    new_median1 = sum(set1[0])/len(set1),sum(set1[1])/len(set1)
-    new_median2 = sum(set2[0])/len(set2),sum(set2[1])/len(set2)
+
+    new_median1 = summation(set1,0)/len(set1),summation(set1,1)/len(set1)
+    new_median2 = summation(set2,0)/len(set2),summation(set2,1)/len(set2)
+
+
 
     while(prev_median1 != new_median1 and prev_median2 != new_median2):
         prev_median1,prev_median2 = new_median1,new_median2
@@ -26,8 +36,8 @@ def knn(parentSet,median1,median2):
                 set1.append(x)
             else:
                 set2.append(x)
-        new_median1 = sum(set1[0])/len(set1),sum(set1[1])/len(set1)
-        new_median2 = sum(set2[0])/len(set2),sum(set2[1])/len(set2)
+        new_median1 = summation(set1,0)/len(set1),summation(set1,1)/len(set1)
+        new_median2 = summation(set2,0)/len(set2),summation(set2,1)/len(set2)
     
     print("Set1: Median=",new_median1)
     print(set1)

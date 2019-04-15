@@ -39,7 +39,4 @@ def driver():
     print("Predicted Y :",b0 + b1*test_x) 
     plot_regression_line(x,y,b0,b1)
 
-
-
 driver()
-

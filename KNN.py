@@ -2,8 +2,7 @@ import pandas as pd
 import math
 import operator
 
-
-trainingSet = pd.read_csv("Training.csv")
+trainingSet = pd.read_csv("KNN.csv")
 def euclidean_distance(first,second,length):
     distance = 0
     for x in range(length):
@@ -43,14 +42,4 @@ def driver():
 
 
 driver()
-
-
-
-        
-
-
-
-    
-
-
 

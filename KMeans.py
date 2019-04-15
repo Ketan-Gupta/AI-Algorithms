@@ -2,6 +2,7 @@ import math
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+
 def summation(container, value):
     total = 0
     for x in range(len(container)):
